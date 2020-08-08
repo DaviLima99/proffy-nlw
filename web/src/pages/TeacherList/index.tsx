@@ -1,29 +1,43 @@
 import React from 'react';
-import PageHeader from '../../components/PageHeader';
 
 import wppIcon from '../../assets/images/icons/whatsapp.svg';
 
 import "./styles.css";
+import Select from '../../components/Select';
+import PageHeader from '../../components/PageHeader';
+import Input from '../../components/Input';
 
 function TeacherList() {
     return (
         <div className="container" id="page-teacher-list">
             <PageHeader  title="Estes são os proffys disponíveis.">
                 <form action="" id="search-teachers">
-                    <div className="input-block">
-                        <label htmlFor="subject">Matéria</label>
-                        <input type="text" id="subject"/>
-                    </div>
 
-                    <div className="input-block">
-                        <label htmlFor="week_day">Dia da semana</label>
-                        <input type="text" id="week_day"/>
-                    </div>
+                    <Select 
+                        name="subject" 
+                        label="Matéria" 
+                        options={[
+                            { value: 'Artes', label: 'Artes'},
+                            { value: 'Matemática', label: 'Matemática'},
+                            { value: 'Redes', label: 'Redes'},
+                            { value: 'LPOO', label: 'LPOO'},
+                        ]}
+                    />
 
-                    <div className="input-block">
-                        <label htmlFor="time">Hora</label>
-                        <input type="text" id="time"/>
-                    </div>
+
+                    <Select 
+                        name="week_day" 
+                        label="Dia da Semana" 
+                        options={[
+                            { value: '1', label: '1'},
+                            { value: '1', label: '1'},
+                            { value: '1', label: '1'},
+                            { value: '1', label: '1'},
+                        ]}
+                    />
+
+                    <Input name="time" label="Hora" type="time"/>
+
                 </form>
             </PageHeader>
 
